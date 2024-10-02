@@ -8,37 +8,25 @@ using namespace std ;
 
 class DoorLock : public Device { // Reciever
     private :
-        bool isOn ;
+        bool isLocked;
     public :
-    void ToggleOn() override {
-        if(isOn){
-            cout << "Door is already Locked ." << endl ;
-            return ;
-        }
-        isOn = true  ;
-        cout << "Door Locked ." << endl;
+    
+    std::string getStatus() override {
+        return isLocked ? "locked" : "unlocked";
     }
-    void ToggleOff() override {
-        if(!isOn){
-            cout << "Door is already UnLocked ." << endl ;
-            return ;
-        }
-        isOn = false  ;
-        cout << "Door UnLocked ." << endl;
-    }
-    string getStatus() override {
-        return isOn ? "locked" : "unlocked" ;
-    }
-    string getDeviceType() override {
-        return "DoorLock" ;
-    }
-    void performAction() override {
-        if(isOn){
-            ToggleOff() ;
-        } else {
-            ToggleOn() ;
+
+    void performAction(const std::string& action) override {
+        if (action == "Lock") {
+            isLocked = true;
+        } else if (action == "Unlock") {
+            isLocked = false;
         }
     }
+
+    std::string getDeviceType() override {
+        return "DoorLock";
+    }
+
 };
 
 #endif

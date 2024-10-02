@@ -5,16 +5,12 @@
 using namespace std ;
 
 class Device {
-public :
-    virtual void ToggleOn() = 0 ;
-    virtual void ToggleOff() = 0 ;
-    virtual string getStatus() = 0 ;
-    virtual string getDeviceType() = 0 ;
-    virtual void performAction() = 0 ;
-    virtual ~Device() ;
-} ;
-
-
+public:
+    virtual string getStatus() = 0;
+    virtual void performAction(const string& action) = 0;
+    virtual string getDeviceType() = 0;
+    virtual ~Device() = default;
+};
 
 
 #endif

@@ -11,33 +11,21 @@ class Light : public Device { // Reciever
     private :
     bool isOn ;
     public :
-    void ToggleOn() override {
-        if(isOn){
-            cout << "Light already on ." << endl ;
-            return ;
-        }
-        isOn = true ;
-        cout << "Light turned on ." << endl ;
-    }
-    void ToggleOff() override {
-        if(!isOn){
-            cout << "Light is alread off" << endl ;
-            return ;
-        }
-        isOn = false ;
-        cout << " Light turned off ." << endl;
-    }
+    
+    Light() : isOn(false) {}
     string getStatus() override {
         return isOn ? "on" : "off" ;
     }
     string getDeviceType() override {
         return "Light" ;
     }
-    void performAction() override {
-        if(isOn){
-            ToggleOn ;
-        } else {
-            ToggleOff ;
+    void performAction(const string& action) override {
+        if (action == "ToggleOn") {
+            isOn = true;
+        } else if (action == "ToggleOff") {
+            isOn = false;
+        } else if (action == "Toggle") {
+            isOn = !isOn;
         }
     }
 };

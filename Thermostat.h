@@ -5,37 +5,23 @@
 #include<iostream>
 #include "Device.h"
 
-class Thermostat : public Device {  // Reciever
+class Thermostat : public Device { // Reciever
     private :
-        bool isOn ;
+        int temperature ;
     public :
-    void ToggleOn() override {
-        if(isOn){
-            cout << "Thermostat is already On ." << endl; 
-            return ;
-        }
-        isOn = true ;
-        cout <<" Thermostat turned On ." << endl ;
-    }
-    void ToggleOff() override {
-        if(!isOn){
-            cout << "Thermostat is already Off ." << endl; 
-            return ;
-        }
-        isOn = false ;
-        cout <<" Thermostat turned Off ." << endl ;
-    }
+        Thermostat() : temperature(22) {}
+        
     string getStatus() override{
-        return isOn ? "On" : "Off" ;
+        return "Temperature: " + to_string(temperature) + "°C";
     }
     string getDeviceType() override {
         return "Thermostat" ;
     }
-    void performAction() override {
-        if(isOn){
-            ToggleOff();
-        } else {
-            ToggleOff() ;
+    void performAction(const string& action) override {
+        if (action == "IncreaseTemp") {
+            temperature += 1;
+        } else if (action == "DecreaseTemp") {
+            temperature -= 1;
         }
     }
 };
