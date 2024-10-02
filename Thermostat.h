@@ -5,7 +5,7 @@
 #include<iostream>
 #include "Device.h"
 
-class Thermostat : public Device { // Reciever
+class Thermostat : public Device {  // Reciever
     private :
         bool isOn ;
     public :
