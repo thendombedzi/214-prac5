@@ -12,8 +12,8 @@ class DoorLock : public Device { // Reciever
     public :
 
     DoorLock();
-
-    std::string getStatus() override;
+    bool getState() const;
+     std::string getStatus() override ;
 
     void performAction(const std::string& action) override;
 

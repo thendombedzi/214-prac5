@@ -6,11 +6,15 @@ DoorLock::DoorLock():isLocked(false)
 {
     cout<<"The door is initially unlocked."<<endl;
 }
-std::string DoorLock::getStatus()  
+std::string DoorLock::getStatus() 
 {
         return isLocked ? "locked" : "unlocked";
     }
 
+bool DoorLock::getState() const
+{
+    return isLocked;
+}
 void DoorLock:: performAction(const std::string& action)  
 {
         if (action == "Lock") {
