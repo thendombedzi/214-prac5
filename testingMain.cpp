@@ -23,14 +23,14 @@ void observerTest(){
     Device* alarm=new Alarms();
 
     newSensor->addDevice(lights);
-    newSensor->addDevice(alarm);
+    newSensor->addDevice(alarm) ;
 
     std::cout << "Initial states:" << std::endl;
     std::cout << "Motion detected: " << (newSensor->getMotionState() ? "Yes" : "No") << std::endl;
     std::cout << "Lights on: " << (lights->getState() ? "Yes" : "No") << std::endl;
     std::cout << "Alarm triggered: " << (alarm->getState() ? "Yes" : "No") << std::endl;
    
-    std::cout << "\nSimulating motion detection:" << std::endl;
+    std::cout << "\nSimulating motion detection: in the area" << std::endl;
     newSensor->detectMotion();
 
     std::cout << "\nUpdated states:" << std::endl;
@@ -152,7 +152,7 @@ void testCommandPattern() {
     std::cout << "Status of Main Door: " << mainDoor.getStatus() << std::endl;
 }
 int main() {
-    
+
  std::cout<<"Test the Observer design pattern: "<<endl;
     observerTest();
     std::cout<<endl;
