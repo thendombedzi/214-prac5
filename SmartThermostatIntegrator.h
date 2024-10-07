@@ -10,8 +10,8 @@ private:
 public:
    smartThermostatIntegrator();
 
-    void setTemperature(int temp);
-    int getTemperature() const;
+    virtual void setTemperature(int temp);
+   virtual  int getTemperature() const;
     ~smartThermostatIntegrator();
 };
 

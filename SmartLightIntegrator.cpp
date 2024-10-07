@@ -2,17 +2,31 @@
 
 smartLightIntegrator::smartLightIntegrator()
 {
-    light= new legacyLight(false);
+    light= new legacyLight();
 }
 
-void smartLightIntegrator::setLightState(bool state) {
-    if (state) {
+void smartLightIntegrator::setLightState(bool state) 
+{
+    if (state) 
+    {
         light->switchOn();
-    } else {
+    } 
+    else 
+    {
         light->switchOff();
     }
 }
 
-bool smartLightIntegrator::getLightState() const {
+bool smartLightIntegrator::getLightState() const 
+{
     return light->getState();
+}
+
+smartLightIntegrator::~smartLightIntegrator()
+{
+    if(light)
+    {
+        delete light;
+        light=nullptr;
+    }
 }

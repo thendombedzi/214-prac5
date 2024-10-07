@@ -9,8 +9,8 @@ private:
     legacyLight* light;
 public:
     smartLightIntegrator();
-    void setLightState(bool state) override;
-    bool getLightState() const override;
+    virtual void setLightState(bool state) ;
+    virtual bool getLightState() const ;
     ~smartLightIntegrator();
 };
 
