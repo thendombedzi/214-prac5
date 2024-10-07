@@ -14,9 +14,8 @@ void smartDoorIntegrator::setLockUnlock(bool state)
    
 }
 
-std::string smartDoorIntegrator::getDoorState() const 
-{
-    return door->getStatus(); 
+bool smartDoorIntegrator::getDoorState() const 
+{  return door->getState();
     }
 
 smartDoorIntegrator::~smartDoorIntegrator() 

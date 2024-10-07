@@ -5,6 +5,7 @@ class smartThermostat {
 public:
      virtual void setTemperature(int temp) = 0;
     virtual int getTemperature() const = 0;
+     virtual ~smartThermostat(){};
 };
 
 #endif 

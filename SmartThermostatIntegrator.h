@@ -2,8 +2,9 @@
 #define SMARTTHERMOSTATINTEGRATOR_H
 
 #include "Thermostat.h"
+#include "smartThermostat.h"
 
-class smartThermostatIntegrator 
+class smartThermostatIntegrator:public smartThermostat
 {
 private:
     Thermostat* thermostat;
