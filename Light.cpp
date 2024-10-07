@@ -8,26 +8,29 @@ Light::Light(): isOn(false)
     }
 
 void Light::update() 
-{
-    switchOn();
+{  if (!isOn) 
+    {switchOn();}
+    else{
+        switchOff();
+    }
 }
 
-void Light::switchOn() {
-    if (!isOn) 
-    {
-        isOn = true;
+void Light::switchOn() 
+{
+    isOn = true;
         state=true;
         std::cout << "Lights turned on." << std::endl;
-    }
+    
 }
 
-void Light::switchOff() {
-    if (isOn) {
-        isOn = false;
+void Light::switchOff() 
+{
+       isOn = false;
         state=false;
         std::cout << "Lights turned off." << std::endl;
-    }
+    
 }
+
 bool Light::getState() const 
 {
     return isOn;

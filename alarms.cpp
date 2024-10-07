@@ -7,8 +7,10 @@ Alarms::Alarms() : activated(false)
 }
 
 void Alarms::update() 
-{
-    activate();
+{   if(!activated)
+    {activate();}
+    else 
+    deactivate();
 }
 
 void Alarms::activate() 

@@ -11,6 +11,13 @@ void motionSensor::detectMotion()
     notifyDevices(); 
  }
 
+ void motionSensor::resetSensor() 
+{
+    motionDetected = false;
+    std::cout << "Motion state reset." << std::endl;
+     notifyDevices();
+}
+
 bool motionSensor:: getMotionState() const
 {
        return motionDetected;  

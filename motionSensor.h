@@ -10,6 +10,7 @@ class motionSensor : public Sensor
 public:
     motionSensor();
     virtual void detectMotion();
+    virtual void resetSensor();
     virtual bool getMotionState() const;
     
     };

@@ -17,6 +17,7 @@ public:
    virtual ~Sensor()=default;
    virtual bool getMotionState() const=0;
    virtual void detectMotion()=0;
+   virtual void resetSensor()=0;
 };
 
 #endif

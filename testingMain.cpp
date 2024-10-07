@@ -35,6 +35,14 @@ void observerTest(){
     std::cout << "Lights on: " << (lights->getState() ? "Yes" : "No") << std::endl;
     std::cout << "Alarm triggered: " << (alarm->getState() ? "Yes" : "No") << std::endl;
 
+     std::cout << "\n no motion anymore detection:" << std::endl;
+    newSensor->resetSensor();
+
+    std::cout << "\n No motion states:" << std::endl;
+    std::cout << "Motion detected: " << (newSensor->getMotionState() ? "Yes" : "No") << std::endl;
+    std::cout << "Lights on: " << (lights->getState() ? "Yes" : "No") << std::endl;
+    std::cout << "Alarm triggered: " << (alarm->getState() ? "Yes" : "No") << std::endl;
+
    delete lights;
    delete alarm;
    delete newSensor;
