@@ -1,4 +1,4 @@
-#include "Sensor.h"
+#include "sensor.h"
 #include <algorithm>
 
 void Sensor::addDevice(Device* device) 

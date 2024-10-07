@@ -1,4 +1,4 @@
-#include "smartThermostatIntegrator.h"
+#include "SmartThermostatIntegrator.h"
 
 smartThermostatIntegrator::smartThermostatIntegrator() 
  { 
