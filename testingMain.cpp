@@ -140,5 +140,8 @@ int main() {
 std::cout<<"Test the Adapter design pattern: "<<endl;
     adapterTest();
       std::cout<<endl;
+std::cout <<"Testing the Composite design pattern :"<< endl ;
+    testCompositePattern();
+    std::cout << endl ;
     
     return 0;}
