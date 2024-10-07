@@ -1,16 +1,18 @@
 #ifndef LEGACYLIGHT_H
 #define LEGACYLIGHT_H
 
+#include "smartDevices.h"
 
-class legacyLight 
+class legacyLight :public smartDevices
 {
 private:
     bool isOn;
 public:
     legacyLight();
+    void update() override;
     void switchOn();
     void switchOff();
-    bool getState() const;
+    virtual  bool getState() const;
 };
 
 #endif 
