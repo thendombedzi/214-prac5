@@ -1,4 +1,4 @@
-#include "smartDoorIntegrator.h"
+#include "SmartDoorIntegrator.h"
 
 smartDoorIntegrator::smartDoorIntegrator() 
 {

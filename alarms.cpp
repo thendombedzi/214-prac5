@@ -1,4 +1,4 @@
-#include "Alarms.h"
+#include "alarms.h"
 #include <iostream>
 
 Alarms::Alarms() : activated(false)
