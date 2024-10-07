@@ -27,3 +27,6 @@ class Thermostat : public Device { // Reciever
 };
 
 #endif
+
+
+// class daigram - must combine thendos and mine 
