@@ -2,11 +2,11 @@
 #define SMARTLIGHTINTEGRATOR_H
 
 #include "smartLights.h"
-#include "legacyLight.h"
+#include "Light.h"
 
 class smartLightIntegrator : public smartLights {
 private:
-    legacyLight* light;
+    Light* light;
 public:
     smartLightIntegrator();
     virtual void setLightState(bool state) ;

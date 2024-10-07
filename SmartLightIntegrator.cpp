@@ -2,7 +2,7 @@
 
 smartLightIntegrator::smartLightIntegrator()
 {
-    light= new legacyLight();
+    light= new Light();
 }
 
 void smartLightIntegrator::setLightState(bool state) 

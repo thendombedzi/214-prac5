@@ -9,21 +9,18 @@ class Thermostat : public Device { // Reciever
     private :
         int temperature ;
     public :
-        Thermostat() : temperature(22) {}
-        
-    string getStatus() override{
-        return "Temperature: " + to_string(temperature) + "°C";
+
+    Thermostat();
+    string getStatus() override;
+    string getDeviceType() override;
+    void performAction(const string& action) override;
+    void setTemp(int temp);
+    int getTemp() const;
+    void update() override {
     }
-    string getDeviceType() override {
-        return "Thermostat" ;
-    }
-    void performAction(const string& action) override {
-        if (action == "IncreaseTemp") {
-            temperature += 1;
-        } else if (action == "DecreaseTemp") {
-            temperature -= 1;
-        }
-    }
-};
+    };
+
+    
+
 
 #endif

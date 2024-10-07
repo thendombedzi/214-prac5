@@ -12,22 +12,15 @@ class Light : public Device { // Reciever
     bool isOn ;
     public :
     
-    Light() : isOn(false) {}
-    string getStatus() override {
-        return isOn ? "on" : "off" ;
-    }
-    string getDeviceType() override {
-        return "Light" ;
-    }
-    void performAction(const string& action) override {
-        if (action == "ToggleOn") {
-            isOn = true;
-        } else if (action == "ToggleOff") {
-            isOn = false;
-        } else if (action == "Toggle") {
-            isOn = !isOn;
-        }
-    }
+    Light() ;
+    string getStatus() override;
+    string getDeviceType() override;
+    void performAction(const string& action) override;
+      void switchOn();
+    void switchOff();
+      void update() override;
+      virtual  bool getState() const;
+    
 };
 
 #endif

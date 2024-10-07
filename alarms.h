@@ -1,18 +1,22 @@
 #ifndef ALARMS_H
 #define ALARMS_H
 
-#include "smartDevices.h"
+#include "Device.h"
 
-class alarms : public smartDevices 
+class Alarms : public Device
 {
     private:
        bool activated;
 public:
-    alarms();
+    Alarms();
     void update() override;
     void activate();
     void deactivate();
     virtual bool getState() const;
+    void performAction(const string& action) override;
+     string getStatus()  override;
+      string getDeviceType()  override;
+      
     
     };
 

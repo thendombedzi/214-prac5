@@ -2,15 +2,15 @@
 #define SMARTDOORINTEGRATOR_H
 
 #include "smartDoor.h"
-#include "legacyDoor.h"
+#include "DoorLock.h"
 
-class smartDoorIntegrator : public smartDoor {
+class smartDoorIntegrator : public SmartDoor {
 private:
-    legacyDoor* door;
+    DoorLock* door;
 public:
     smartDoorIntegrator();
     virtual void setLockUnlock(bool state) ;
-    virtual  bool getDoorState() const ;
+    virtual  std::string getDoorState() const ;
     ~smartDoorIntegrator();
 };
 

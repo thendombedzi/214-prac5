@@ -1,12 +1,12 @@
 #ifndef SMARTTHERMOSTATINTEGRATOR_H
 #define SMARTTHERMOSTATINTEGRATOR_H
 
-#include "legacyThermostat.h"
+#include "Thermostat.h"
 
 class smartThermostatIntegrator 
 {
 private:
-    legacyThermostat* thermostat;
+    Thermostat* thermostat;
 public:
    smartThermostatIntegrator();
 

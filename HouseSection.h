@@ -9,29 +9,12 @@ class HouseSection : public Device {
     std::string sectionName;
     std::vector<Room*> rooms;
 public:
-    HouseSection(const std::string& name) : sectionName(name) {}
+    HouseSection(const std::string& name);
+    void addRoom(Room* room);
+    std::string getStatus() override;
 
-    void addRoom(Room* room) {
-        rooms.push_back(room);
-    }
-
-    std::string getStatus() override {
-        std::string status = "Section " + sectionName + ":\n";
-        for (auto& room : rooms) {
-            status += room->getStatus();
-        }
-        return status;
-    }
-
-    void performAction(const std::string& action) override {
-        for (auto& room : rooms) {
-            room->performAction(action);
-        }
-    }
-
-    std::string getDeviceType() override {
-        return "Section: " + sectionName;
-    }
+    void performAction(const std::string& action) override;
+    std::string getDeviceType() override;
 };
 
 

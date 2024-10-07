@@ -1,9 +1,9 @@
 #ifndef MOTIONSENSOR_H
 #define MOTIONSENSOR_H
 
-#include "sensor.h"
+#include "Sensor.h"
 
-class motionSensor : public sensor 
+class motionSensor : public Sensor 
 {
     private:
        bool motionDetected;

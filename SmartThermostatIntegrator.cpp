@@ -2,7 +2,7 @@
 
 smartThermostatIntegrator::smartThermostatIntegrator() 
  { 
-    thermostat= new legacyThermostat();
+    thermostat= new Thermostat();
     }
 
  void smartThermostatIntegrator::setTemperature(int temp) 

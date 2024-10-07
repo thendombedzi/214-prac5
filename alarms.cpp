@@ -1,17 +1,17 @@
-#include "alarms.h"
+#include "Alarms.h"
 #include <iostream>
 
-alarms::alarms() : activated(false)
+Alarms::Alarms() : activated(false)
 {
     state=false;
 }
 
-void alarms::update() 
+void Alarms::update() 
 {
     activate();
 }
 
-void alarms::activate() 
+void Alarms::activate() 
 {
     if (!activated) 
     {
@@ -21,7 +21,7 @@ void alarms::activate()
     }
 }
 
-void alarms::deactivate() 
+void Alarms::deactivate() 
 {
     if (activated) 
     {
@@ -31,7 +31,16 @@ void alarms::deactivate()
     }
 }
 
-bool alarms::getState() const 
+bool Alarms::getState() const 
 {
     return activated;
 }
+
+    void Alarms::performAction(const string& action) 
+     {}
+
+         string Alarms::getDeviceType()  {
+    return "Alarm";
+}
+
+string Alarms::getStatus(){  return activated ? "activated" : "deactivated" ;}

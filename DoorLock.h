@@ -10,21 +10,16 @@ class DoorLock : public Device { // Reciever
     private :
         bool isLocked;
     public :
-    
-    std::string getStatus() override {
-        return isLocked ? "locked" : "unlocked";
-    }
 
-    void performAction(const std::string& action) override {
-        if (action == "Lock") {
-            isLocked = true;
-        } else if (action == "Unlock") {
-            isLocked = false;
-        }
-    }
+    DoorLock();
 
-    std::string getDeviceType() override {
-        return "DoorLock";
+    std::string getStatus() override;
+
+    void performAction(const std::string& action) override;
+
+    std::string getDeviceType() override;
+
+    void update() override {
     }
 
 };

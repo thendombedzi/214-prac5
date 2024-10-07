@@ -1,17 +1,17 @@
-#include "sensor.h"
+#include "Sensor.h"
 #include <algorithm>
 
-void sensor::addDevice(smartDevices* device) 
+void Sensor::addDevice(Device* device) 
 {
     devices.push_back(device);
 }
 
-void sensor::removeDevice(smartDevices* device) 
+void Sensor::removeDevice(Device* device) 
 {
     devices.erase(std::remove(devices.begin(), devices.end(), device), devices.end());
 }
 
-void sensor::notifyDevices() 
+void Sensor::notifyDevices() 
 {
     for (auto device : devices) 
     {

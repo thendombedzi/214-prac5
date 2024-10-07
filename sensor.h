@@ -2,19 +2,19 @@
 #define SENSOR_H
 
 #include <vector>
-#include "smartDevices.h"
+#include "Device.h"
 
-class sensor {
+class Sensor {
 private:
-    std::vector<smartDevices*> devices;
+    std::vector<Device*> devices;
      
 
 public:
-    void addDevice(smartDevices* device);
-    void removeDevice(smartDevices* device);
+    void addDevice(Device* device);
+    void removeDevice(Device* device);
     void notifyDevices();
 
-   virtual ~sensor()=default;
+   virtual ~Sensor()=default;
    virtual bool getMotionState() const=0;
    virtual void detectMotion()=0;
 };

@@ -1,14 +1,14 @@
 #include "motionSensor.h"
-#include "legacyLight.h"
-#include "alarms.h"
+#include "Light.h"
+#include "Alarms.h"
 #include <iostream>
 
 
 void observerTest(){
-    sensor* newSensor= new motionSensor();
+    Sensor* newSensor= new motionSensor();
    
-    smartDevices* lights=new legacyLight();
-    smartDevices* alarm=new alarms();
+    Device* lights=new Light();
+    Device* alarm=new Alarms();
 
     newSensor->addDevice(lights);
     newSensor->addDevice(alarm);
