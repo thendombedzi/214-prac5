@@ -3,14 +3,16 @@
 #include "Device.h"
 #include "Command.h"
 
-class LockDoors : public Device {
+class LockDoors : public Command {
     private :
         Device* device ;
     public :
         LockDoors(Device* dev):device(dev){}
-        void execute(){
+        void execute()override{
             device->performAction("Lock");
         }
+        ~LockDoors() override {};
+
 };
 
 #endif

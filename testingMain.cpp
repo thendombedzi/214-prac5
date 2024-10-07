@@ -10,8 +10,9 @@
 #include "smartDoorIntegrator.h"
 #include "DoorLock.h"
 #include "smartDoor.h"
-#include "DoorLock.h"
 #include "Room.h"
+#include "LockDoors.h"
+#include "TurnOffLights.h"
 #include <iostream>
 
 
@@ -131,6 +132,25 @@ void testCompositePattern(){
     delete kitchen;
     delete houseSection;
 }
+void testCommandPattern() {
+    // Create device instances (receivers)
+    Light livingRoomLight;
+    DoorLock mainDoor;
+
+    // Create concrete command objects and bind them to the devices
+    TurnOffLights turnOffLivingRoomLight(&livingRoomLight);
+    LockDoors lockMainDoor(&mainDoor);
+
+    // Execute the commands
+    std::cout << "Testing TurnOffLights Command:" << std::endl;
+    turnOffLivingRoomLight.execute(); 
+
+    std::cout << "Testing LockDoors Command:" << std::endl;
+    lockMainDoor.execute();  
+
+    std::cout << "Status of Living Room Light: " << livingRoomLight.getStatus() << std::endl;
+    std::cout << "Status of Main Door: " << mainDoor.getStatus() << std::endl;
+}
 int main() {
     
  std::cout<<"Test the Observer design pattern: "<<endl;
@@ -142,6 +162,9 @@ std::cout<<"Test the Adapter design pattern: "<<endl;
       std::cout<<endl;
 std::cout <<"Testing the Composite design pattern :"<< endl ;
     testCompositePattern();
+    std::cout << endl ;
+std::cout <<"Testing the Command design pattern :"<< endl ;
+    testCommandPattern();
     std::cout << endl ;
     
     return 0;}

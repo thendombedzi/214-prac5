@@ -9,9 +9,10 @@ class TurnOffLights : public Command{
 
     public :
         TurnOffLights(Device* dev) : device(dev){}
-        void execute(){
+        void execute()override{
             device->performAction("ToggleOff");
         }
+        ~TurnOffLights() override {}
 };
 
 #endif
