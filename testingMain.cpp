@@ -9,7 +9,7 @@
 #include "smartLights.h"
 #include "smartDoorIntegrator.h"
 #include "DoorLock.h"
-#include "smartDoor.h"
+#include "SmartDoor.h"
 #include <iostream>
 
 
@@ -83,7 +83,7 @@ void adapterTest()
      delete door;
 }
 int main() {
-    
+
  std::cout<<"Test the Observer design pattern: "<<endl;
     observerTest();
     std::cout<<endl;
