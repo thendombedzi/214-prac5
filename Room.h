@@ -4,6 +4,7 @@
 #include <string>
 #include <iostream>
 #include <vector>
+#include <algorithm>
 using namespace std ;
 class Room : public Device {
     std::string roomName;
@@ -14,6 +15,12 @@ public:
     void addDevice(Device* device) {
         devices.push_back(device);
     }
+    void removeDevice(Device* device) {
+        // Removing device from the room
+        devices.erase(std::remove(devices.begin(), devices.end(), device), devices.end());
+    }
+
+
 
     std::string getStatus() override {
         std::string status = "Room " + roomName + ":\n";
@@ -32,6 +39,8 @@ public:
     std::string getDeviceType() override {
         return "Room: " + roomName;
     }
+
+    void update() override {}
 };
 
 #endif

@@ -5,7 +5,7 @@
 using namespace std ;
 
 class Device {
-     protected:
+    protected:
     bool state;
 public:
     virtual string getStatus() = 0;
