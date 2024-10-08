@@ -1,7 +1,7 @@
 #ifndef MOTIONSENSOR_H
 #define MOTIONSENSOR_H
 
-#include "sensor.h"
+#include "Sensor.h"
 
 class motionSensor : public Sensor 
 {

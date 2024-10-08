@@ -1,7 +1,7 @@
 #ifndef SMARTDOORINTEGRATOR_H
 #define SMARTDOORINTEGRATOR_H
 
-#include "smartDoor.h"
+#include "SmartDoor.h"
 #include "DoorLock.h"
 
 class smartDoorIntegrator : public SmartDoor {
